@@ -1,1 +1,97 @@
 @import './global.scss';
+
+html {
+	height: 100%;
+}
+
+body {
+	// Theme colors
+	--gray-1: #131313;
+	--gray-2: #191919;
+	--gray-3: #1f1f1f;
+	--gray-4: #242424;
+	--primary: #93abfc;
+	--primary-hover: #353948;
+
+	background-color: var(--gray-1);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+
+	.primary {
+		color: var(--primary);
+	}
+
+	h1 {
+		text-align: center;
+		font-weight: 500;
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		text-align: center;
+		margin-top: 1em;
+		font-weight: 500;
+		font-size: 1.1rem;
+	}
+
+	button {
+		padding: 0.8em 1em;
+		background-color: var(--gray-3);
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		border: none;
+		font-size: 1rem;
+		outline: none !important;
+
+		color: white;
+		border-radius: 0.5em;
+
+		cursor: pointer;
+		color: var(--primary);
+
+		&:hover {
+			background-color: var(--primary-hover);
+		}
+	}
+
+	.particle {
+		position: fixed;
+		width: 1vw;
+		height: 1vw;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		background-color: var(--color);
+		box-shadow: 0 0 2px 2px var(--glow);
+		opacity: 0;
+
+		@keyframes fade {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
+
+		animation: fade var(--duration) linear;
+
+		@keyframes blink {
+			0% {
+				opacity: 0;
+			}
+
+			50% {
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+}
